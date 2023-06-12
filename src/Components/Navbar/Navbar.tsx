@@ -1,3 +1,4 @@
+import { PageLink } from '../PageLink/PageLink';
 import './Navbar.scss';
 
 export const Navbar = () => {
@@ -5,27 +6,19 @@ export const Navbar = () => {
     <nav className="navbar">
       <ul className="navbar__list">
         <li className="navbar__element navbar__element--active">
-          <a className="navbar__link navbar__link" href="/home">
-            Home
-          </a>
+          <PageLink to='home' classNames='navbar__link navbar__link' innerValue='Home'/>
         </li>
 
         <li className="navbar__element">
-          <a className="navbar__link" href="/phones">
-            Phones
-          </a>
+          <PageLink to='phones' classNames='navbar__link navbar__link' innerValue='Phones'/>
         </li>
 
         <li className="navbar__element">
-          <a className="navbar__link" href="/tablets">
-            Tablets
-          </a>
+          <PageLink to='tablets' classNames='navbar__link navbar__link' innerValue='Tablets'/>
         </li>
 
         <li className="navbar__element">
-          <a className="navbar__link" href="/accessories">
-            Accessories
-          </a>
+          <PageLink to='accessories' classNames='navbar__link navbar__link' innerValue='Accessories'/>
         </li>
       </ul>
     </nav>
