@@ -1,10 +1,17 @@
 import './Navbar.scss';
 
-export const Navbar = () => {
+import { NavButtons } from '../NavButtons/NavButtons';
+
+interface NavbarProps {
+  isOpen: boolean;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
   return (
-    <nav className="navbar">
+    <div className={`navbar ${isOpen ? 'navbar--open' : ''}`}
+    >
       <ul className="navbar__list">
-        <li className="navbar__element navbar__element--active">
+        <li className="navbar__element  navbar__element--active">
           <a className="navbar__link navbar__link" href="/home">
             Home
           </a>
@@ -28,6 +35,8 @@ export const Navbar = () => {
           </a>
         </li>
       </ul>
-    </nav>
+
+      <NavButtons />
+    </div>
   );
 };

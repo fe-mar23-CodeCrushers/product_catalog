@@ -1,0 +1,37 @@
+.nav {
+  @media screen and (min-width: 640px) {
+    flex-grow: 1;
+  }
+
+  &_btns {
+    padding: 13px 17px;
+    box-shadow: -1px 0px 0px #E2E6E9;
+    min-width: 48px;
+    width: 48px;
+    cursor: pointer;
+
+    @media screen and (min-width: 640px) {
+      display: none;
+      box-shadow: none;
+    }
+  }
+
+  &_burger {
+    background-color: transparent;
+    border: none;
+
+    &--open {
+      width: 14px;
+      height: 8.5px;
+    }
+    
+    &--close {
+      width: 9.3px;
+      height: 9.3px;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  } 
+}

@@ -9,7 +9,7 @@ export const NavButtons = () => {
       >
         <img
           src="https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/header/public/img/Icons/Favourites%20(Heart%20Like).png"
-          alt="favorities icon"
+          alt="favorites icon"
           className="nav-buttons__icon"
         />
       </a>
@@ -19,7 +19,7 @@ export const NavButtons = () => {
       >
         <img
           src="https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/header/public/img/Icons/Shopping%20bag%20(Cart).png"
-          alt="favorities icon"
+          alt="cart icon"
           className="nav-buttons__icon"
         />
       </a>
