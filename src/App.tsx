@@ -1,5 +1,8 @@
 import "./App.scss";
+import { Header } from "./Components/Header/Header";
 
 export const App = () => (
-  <h1 className="test">App</h1>
+  <div>
+    <Header />
+  </div>
 )
