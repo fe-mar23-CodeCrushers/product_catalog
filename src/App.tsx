@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Header } from "./Components/Header/Header";
 import { PhonesPage } from "./Pages/PhonesPage/PhonesPage";
 import { HomePage } from "./Pages/HomePage/HomePage";
-import { Footer } from "./Components/ComponentTemplate/Footer/Footer";
+import { Footer } from "./Components/Footer/Footer";
 
 export const App = () => (
   <div className="app">
