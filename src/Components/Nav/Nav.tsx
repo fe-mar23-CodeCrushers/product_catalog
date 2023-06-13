@@ -7,9 +7,9 @@ export const Nav = () => {
 
   return (
     <nav className="nav">
-      <div className="nav_btns">
+      <div className="nav__btns">
         <button
-          className={`nav_burger nav_burger--open `}
+          className={`nav__burger nav__burger--open `}
           aria-label="Open navigation menu button"
           onClick={() => setIsOpen(!isOpen) }
         >
