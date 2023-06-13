@@ -56,7 +56,7 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
             href="#addtofavourites"
             className="phone__buttons-favwrapper"
             onClick={handleFavouritesClick}>
-            <img alt="add to favourites icon" className="phone__favourites-icon" src="assets/favourite.png"></img>
+            <img alt="add to favourites icon" className="phone__favourites-icon" src="favourite.png"></img>
           </a>
         </div>
 
