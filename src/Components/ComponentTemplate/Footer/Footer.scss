@@ -14,6 +14,16 @@ $text-color:#89939A;
   background: #FFFFFF;
   box-shadow: 0px -1px 0px #E2E6E9;
 
+  &__box {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
   &__logo {
     width: auto;
     height: 30px;
@@ -74,6 +84,13 @@ $text-color:#89939A;
       justify-content: space-between;
     }
 
+    &__box {
+      flex-direction: row;
+      height: 96px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     &__list {
       flex-direction: row;
     }
@@ -82,6 +99,10 @@ $text-color:#89939A;
   @media (min-width:1200px) {
     &__list {
       gap: 106px;
+    }
+
+    &__box {
+      width: 1300px;
     }
   }
 
