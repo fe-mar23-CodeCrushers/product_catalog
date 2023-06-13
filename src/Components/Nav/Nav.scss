@@ -4,7 +4,6 @@
   }
 
   &__btns {
-    padding: 13px 17px;
     box-shadow: -1px 0px 0px #E2E6E9;
     min-width: 48px;
     width: 48px;
@@ -19,16 +18,8 @@
   &__burger {
     background-color: transparent;
     border: none;
-
-    &--open {
-      width: 14px;
-      height: 8.5px;
-    }
-    
-    &--close {
-      width: 9.3px;
-      height: 9.3px;
-    }
+    width: 48px;
+    height: 48px;
 
     &--hidden {
       display: none;
