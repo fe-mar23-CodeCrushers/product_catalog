@@ -24,7 +24,6 @@ export const Slider = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleNextSlide = () => {
-    console.log(slide)
     if (slide === slides.length - 1) {
       setSlider(0);
     } else {
