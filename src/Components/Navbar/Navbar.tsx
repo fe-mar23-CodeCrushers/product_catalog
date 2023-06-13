@@ -1,3 +1,4 @@
+import { PageLink } from '../PageLink/PageLink';
 import './Navbar.scss';
 
 import { NavButtons } from '../NavButtons/NavButtons';
@@ -11,28 +12,20 @@ export const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
     <div className={`navbar ${isOpen ? 'navbar--open' : ''}`}
     >
       <ul className="navbar__list">
-        <li className="navbar__element  navbar__element--active">
-          <a className="navbar__link navbar__link" href="/home">
-            Home
-          </a>
+        <li className="navbar__element navbar__element--active">
+          <PageLink to='home' classNames='navbar__link navbar__link' innerValue='Home'/>
         </li>
 
         <li className="navbar__element">
-          <a className="navbar__link" href="/phones">
-            Phones
-          </a>
+          <PageLink to='phones' classNames='navbar__link navbar__link' innerValue='Phones'/>
         </li>
 
         <li className="navbar__element">
-          <a className="navbar__link" href="/tablets">
-            Tablets
-          </a>
+          <PageLink to='tablets' classNames='navbar__link navbar__link' innerValue='Tablets'/>
         </li>
 
         <li className="navbar__element">
-          <a className="navbar__link" href="/accessories">
-            Accessories
-          </a>
+          <PageLink to='accessories' classNames='navbar__link navbar__link' innerValue='Accessories'/>
         </li>
       </ul>
 
