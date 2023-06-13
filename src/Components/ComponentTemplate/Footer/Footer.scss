@@ -8,7 +8,7 @@ $text-color:#89939A;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:flex-start;
+  align-items:center;
   padding-left: 10px;
   gap: 10px;
   background: #FFFFFF;
@@ -22,6 +22,7 @@ $text-color:#89939A;
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
+    margin: 0 auto;
   }
 
   &__logo {
