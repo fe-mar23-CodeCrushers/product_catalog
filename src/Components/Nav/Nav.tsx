@@ -16,12 +16,12 @@ export const Nav = () => {
           {isOpen 
             ? (
               <img
-              src="https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/header/public/img/Icons/Shopping%20bag%20(Cart).png"
-              alt="Open navigation menu"
+                src="https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/main/public/img/Icons/cross.png"
+                alt="Open navigation menu"
               />
             ) : (
-              <img
-                src="https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/header/public/img/Icons/Favourites%20(Heart%20Like).png"
+              <img 
+                src="https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/main/public/img/Icons/burger.png"
                 alt="Close navigation menu"
               />
             )}
