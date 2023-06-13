@@ -1,0 +1,82 @@
+@import "../../Helpers/variables";
+
+.cart-element {
+  padding: 16px;
+  border: 1px solid $color-grey-elements;
+
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  grid-template-areas: 
+  "delete image title title"
+  "count count value value";
+
+  align-items: center;
+  gap: 20px;
+
+  &__delete {
+    grid-area: delete;
+    justify-self: flex-start;
+
+    border: none;
+    background: transparent;
+  }
+
+  &__image {
+    grid-area: image;
+  }
+
+  &__title {
+    grid-area: title;
+    font-weight: 300;
+    font-size: 14px;
+    color: $color-grey;
+  }
+
+  &__count {
+    grid-area: count;
+  }
+
+  &__value {
+    grid-area: value;
+    justify-self: flex-end;
+    font-size: 22px;
+    color: $color-grey;
+    font-weight: 800;
+  }
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  &__btn {
+    height: 32px;
+    width: 32px;
+
+    border: 1px solid $color-grey-elements;
+    background:none;
+
+    &:hover {
+      border-color: #B4BDC3;
+    }
+    &:disabled {
+      background-color: $color-light-grey;
+      color: white;
+      cursor: not-allowed;
+    }
+  }
+
+  &__value {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 10px;
+    width: 32px;
+  }
+}
+
+@media (min-width: 640px) {
+  .cart-element {
+    grid-template-columns: auto auto 1fr auto auto;
+    grid-template-areas: "delete image title count value";
+    gap: 30px;
+  }
+}
