@@ -9,7 +9,10 @@ export type PhoneExtended = {
   colorsAvailable: string[],
   color: string,
   images: string[],
-  description: object[],
+  description: {
+    title: string,
+    text: string[]
+  }[],
   screen: string,
   resolution: string,
   processor: string,

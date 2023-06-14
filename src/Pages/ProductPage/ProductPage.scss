@@ -50,7 +50,7 @@
 
 .section__hero--phone-top img {
   width: 275px;
-  height: 275px;
+  height: auto;
 }
 
 .section__hero--phone-bottom {
@@ -66,25 +66,11 @@
   border: 1px solid #e2e6e9;
   padding: 4.9px;
   text-align: center;
-}
-
-.phone__image:nth-child(3),
-.phone__image:nth-child(5) {
-  padding-bottom: 0;
+  overflow: hidden;
 }
 
 .phone__image img {
-  width: 100%;
-  height: auto;
-}
-
-.phone__image:nth-child(2) img {
-  width: auto;
-  height: 40px;
-}
-
-.phone__image:nth-child(3) img,
-.phone__image:nth-child(5) img {
+  width: fit-content;
   height: 100%;
 }
 
@@ -93,9 +79,13 @@
 }
 
 .generic {
+  padding-bottom: 24px;
+}
+
+.colors {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 24px;
+  padding-bottom: 8px;
 }
 
 .colors--p {
@@ -105,62 +95,53 @@
   font-size: 12px;
   line-height: 15px;
   color: #89939A;
-  padding-bottom: 8px
 }
 
 .colors__btns {
   display: flex;
+  flex-wrap: wrap;
   gap: 9px;
   padding-left: 4px;
 }
 
 .colors__btn {
   position: relative;
-  width: 24px;
-  height: 24px;
-  border: none;
-  border-radius: 100%;
-}
-
-.colors__btn::before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
   width: 30px;
   height: 30px;
+  border: none;
   border-radius: 100%;
-  border: 1px solid #e2e6e9;
+  padding: 20px;
+  background-color: #e2e6e9;
 }
 
-.colors__btn--1 {
-  background: #FCDBC1;
+span.colors__btn-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 100%;
+  background-color: #ffffff;
 }
 
-.colors__btn--2 {
-  background: #5F7170;
+.colors__btn .colors__btn-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
 }
 
-.colors__btn--3 {
-  background: #4C4C4C;
-}
-
-.colors__btn--4 {
-  background: #F0F0F0;
-}
-
-.colors__btn--active {
+.colors__btn.colors__btn--active {
   position: relative;
   width: 26px;
   height: 26px;
   border: none;
   border-radius: 100%;
-}
-
-.colors__btn--active::before {
-  width: 32px;
-  height: 32px;
-  border: 1px solid #313237;
+  background-color: #313237;
 }
 
 .id--p {
@@ -362,8 +343,8 @@
 
   .section__hero--phone-top img {
     height: auto;
-    width: 43vw;
-    max-width: 442px;
+    width: 40vw;
+    max-width: 360px;
   }
 
   .section__hero--phone-top {
@@ -391,8 +372,6 @@
   }
 
   .generic {
-    display: flex;
-    justify-content: space-between;
     padding-bottom: 24px;
   }
 

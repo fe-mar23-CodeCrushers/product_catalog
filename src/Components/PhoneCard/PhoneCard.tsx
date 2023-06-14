@@ -10,7 +10,7 @@ interface PhoneCardProps {
 
 export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
   const [active, setActive] = useState(false);
-  const { id, name, fullPrice, price, screen, capacity, ram, image } = phone;
+  const { phoneId, name, fullPrice, price, screen, capacity, ram, image } = phone;
   const priceLowered = fullPrice !== price;
 
   const handleFavouritesClick = () => {
@@ -27,7 +27,7 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
         />
       </div>
 
-      <Link to={`/products/${id}`}>
+      <Link to={`/products/${phoneId}`}>
         <div className="phone__name">{name}</div>
       </Link>
 
