@@ -1,0 +1,19 @@
+@import "../../Helpers/variables";
+
+.notification {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: white;
+
+  &--fail {
+    background: rgb(157, 22, 22);
+  }
+
+  &--success {
+    background: rgb(12, 152, 12);
+  }
+}
