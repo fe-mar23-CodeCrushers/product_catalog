@@ -1,0 +1,185 @@
+@import "../../Helpers/mixins";
+
+.phone {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 440px;
+  width: 287px;
+  border-radius: 0;
+  padding: 32px;
+  border: 1px solid #E2E6E9;
+  background-color: #FFFFFF;
+
+  @include for-tablet() {
+    height: 506px;
+    width: 288px;
+  }
+
+  @include for-desktop() {
+    width: 272px;
+  }
+
+  &__photospace {
+    display:flex;
+    justify-content: center;
+    height: 130px;
+    width: 223px;
+    border-radius: 0;
+    margin-bottom: 24px;
+
+    @include for-tablet() {
+      width: 224px;
+      height: 196px;
+    }
+
+    @include for-desktop() {
+      width: 208px;
+    }
+
+    &--image {
+      height: 194px;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__name {
+    height: 42px;
+    width: 223px;
+    left: 0px;
+    top: 16px;
+    border-radius: nullpx;
+    font-family: 'Mont';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #313237;
+    margin-bottom: 8px;
+
+    @include for-tablet() {
+      width: 224px;
+    }
+
+    @include for-desktop() {
+      width: 208px;
+    }
+  }
+
+  &__price {
+    height: 31px;
+    width: 51px;
+    border-radius: nullpx;
+    font-family: 'Mont';
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #313237;
+    margin-bottom: 8px;
+
+    &--before {
+      padding-left: 8px;
+      height: 28px;
+      width: 49px;
+      border-radius: nullpx;
+      font-weight: 600;
+      line-height: 28px;
+      text-decoration-line: line-through;
+      color: #89939A;
+    }
+  }
+
+  &__details {
+    width: 223px;
+    height: auto;
+    padding-top: 16px;
+    margin-bottom: 8px;
+    border-top: 1px solid #E2E6E9;
+
+    @include for-tablet() {
+      width: 224px;
+    }
+
+    @include for-desktop() {
+      width: 208px;
+    }
+
+    &-line {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      line-height: 15px;
+    }
+
+    &-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #89939A
+    }
+
+    &-value {
+      font-family: Mont;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0em;
+      text-align: right;
+      color: #313237;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    width: 223px;
+    height: 40px;
+
+    @include for-tablet() {
+      width: 224px;
+    }
+
+    @include for-desktop() {
+      width: 208px;
+    }
+
+    &-cart {
+      display: flex;
+      width: 175px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 21px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background-color: #313237;
+      color: #FFFFFF;
+      margin-right: 8px;
+
+      @include for-tablet() {
+        width: 176px;
+      }
+
+      @include for-desktop() {
+        width: 160px;
+      }
+    }
+
+    &-favwrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      border: 1px solid #B4BDC3;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

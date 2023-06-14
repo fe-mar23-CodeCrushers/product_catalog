@@ -24,11 +24,7 @@ export const Slider = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleNextSlide = () => {
-    if (slide === slides.length - 1) {
-      setSlider(0);
-    } else {
-      setSlider(prevState => prevState + 1)
-    }
+    setSlider(prevState => (prevState + 1) % slides.length);
   }
 
   const handlePrevSlide = () => {
@@ -38,6 +34,17 @@ export const Slider = () => {
       setSlider(prevState => prevState - 1)
     }
   }
+
+  useEffect(() => { 
+    const interval = setInterval(() => {
+      console.log(slide)
+      handleNextSlide();
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []); 
 
   useEffect(() => {
     const handleWindowResize = () => {
