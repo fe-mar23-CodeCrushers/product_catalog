@@ -1,3 +1,5 @@
+@import "../../Helpers/mixins";
+
 .phone {
   box-sizing: border-box;
   display: flex;
@@ -10,18 +12,34 @@
   border: 1px solid #E2E6E9;
   background-color: #FFFFFF;
 
+  @include for-tablet() {
+    height: 506px;
+    width: 288px;
+  }
+
+  @include for-desktop() {
+    width: 272px;
+  }
+
   &__photospace {
     display:flex;
     justify-content: center;
     height: 130px;
     width: 223px;
-    left: 32px;
-    top: 32px;
     border-radius: 0;
     margin-bottom: 24px;
 
+    @include for-tablet() {
+      width: 224px;
+      height: 196px;
+    }
+
+    @include for-desktop() {
+      width: 208px;
+    }
+
     &--image {
-      height: 128px;
+      height: 194px;
       width: auto;
       object-fit: contain;
     }
@@ -41,6 +59,14 @@
     text-align: left;
     color: #313237;
     margin-bottom: 8px;
+
+    @include for-tablet() {
+      width: 224px;
+    }
+
+    @include for-desktop() {
+      width: 208px;
+    }
   }
 
   &__price {
@@ -75,6 +101,14 @@
     margin-bottom: 8px;
     border-top: 1px solid #E2E6E9;
 
+    @include for-tablet() {
+      width: 224px;
+    }
+
+    @include for-desktop() {
+      width: 208px;
+    }
+
     &-line {
       display: flex;
       justify-content: space-between;
@@ -106,6 +140,14 @@
     width: 223px;
     height: 40px;
 
+    @include for-tablet() {
+      width: 224px;
+    }
+
+    @include for-desktop() {
+      width: 208px;
+    }
+
     &-cart {
       display: flex;
       width: 175px;
@@ -120,6 +162,14 @@
       background-color: #313237;
       color: #FFFFFF;
       margin-right: 8px;
+
+      @include for-tablet() {
+        width: 176px;
+      }
+
+      @include for-desktop() {
+        width: 160px;
+      }
     }
 
     &-favwrapper {
