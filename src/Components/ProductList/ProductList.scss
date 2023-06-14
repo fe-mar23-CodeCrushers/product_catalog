@@ -1,4 +1,20 @@
+@import "../../Helpers/mixins";
 .products {
     display: flex;
     flex-direction: column;
+    padding: 24px 16px;
+    justify-content: center;
+    
+    @include for-tablet() {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+}
+    
+.products .phone {
+    margin-bottom: 40px;
+
+    @include for-tablet() {
+        margin-right: 16px;
+    }
 }
