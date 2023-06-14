@@ -1,0 +1,27 @@
+@import "../../Helpers/variables";
+
+.home {
+  &__title {
+    font-size: 32px;
+    font-weight: 800;
+    color: $color-grey;
+    padding: 16px;
+  }
+}
+
+
+@media (min-width: 640px) {
+  .home {
+    &__title {
+      font-size: 48px;
+    }
+  } 
+}
+
+@media (min-width: 1200px) {
+  .home {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+
