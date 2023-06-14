@@ -5,6 +5,7 @@ import { PhonesPage } from "./Pages/PhonesPage/PhonesPage";
 import { HomePage } from "./Pages/HomePage/HomePage";
 import { Footer } from "./Components/Footer/Footer";
 import { CartPage } from "./Pages/CartPage/CartPage";
+import { NotFound } from "./Components/NotFound/NotFound";
 
 export const App = () => (
   <div className="app">
@@ -15,7 +16,7 @@ export const App = () => (
         <Route path="/home" element={<HomePage />} />
         <Route path="/phones" element={<PhonesPage/>} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="*" element={<h1>Not Found</h1>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </main>
     <Footer />
