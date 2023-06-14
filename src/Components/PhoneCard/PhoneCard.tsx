@@ -20,7 +20,7 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
     <div className="phone">
       <div className="phone__photospace">
         <img
-          src={image}
+          src={require(`../../assets/${image}`)}
           alt={name}
           className="phone__photospace--image"
         />
@@ -56,7 +56,7 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
             href="#addtofavourites"
             className="phone__buttons-favwrapper"
             onClick={handleFavouritesClick}>
-            <img alt="add to favourites icon" className="phone__favourites-icon" src="favourite.png"></img>
+            <img alt="add to favourites icon" className="phone__favourites-icon" src={require('../../assets/favourite.png')}></img>
           </a>
         </div>
 

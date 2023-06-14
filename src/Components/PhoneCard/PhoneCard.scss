@@ -11,6 +11,8 @@
   background-color: #FFFFFF;
 
   &__photospace {
+    display:flex;
+    justify-content: center;
     height: 130px;
     width: 223px;
     left: 32px;
@@ -19,6 +21,8 @@
     margin-bottom: 24px;
 
     &--image {
+      height: 128px;
+      width: auto;
       object-fit: contain;
     }
   }
@@ -103,6 +107,7 @@
     height: 40px;
 
     &-cart {
+      display: flex;
       width: 175px;
       font-style: normal;
       font-weight: 700;
@@ -110,11 +115,15 @@
       line-height: 21px;
       text-align: center;
       align-items: center;
+      justify-content: center;
+      text-decoration: none;
       background-color: #313237;
+      color: #FFFFFF;
       margin-right: 8px;
     }
 
     &-favwrapper {
+      display: flex;
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
