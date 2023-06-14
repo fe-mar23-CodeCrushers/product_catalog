@@ -1,5 +1,6 @@
 import './PhonesPage.scss';
+import { ProductList } from '../../Components/ProductList/ProductList';
 
 export const PhonesPage = () => (
-  <p>Cardss</p>
+  <ProductList />
 )
