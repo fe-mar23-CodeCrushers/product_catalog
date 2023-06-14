@@ -1,6 +1,8 @@
+import { PageLink } from '../PageLink/PageLink';
 import './PhoneCard.scss';
 import { Phone } from '../../types/phone';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface PhoneCardProps {
   phone: Phone,
@@ -8,7 +10,7 @@ interface PhoneCardProps {
 
 export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
   const [active, setActive] = useState(false);
-  const { name, fullPrice, price, screen, capacity, ram, image } = phone;
+  const { id, name, fullPrice, price, screen, capacity, ram, image } = phone;
   const priceLowered = fullPrice !== price;
 
   const handleFavouritesClick = () => {
@@ -16,7 +18,6 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
   }
 
   return (
-
     <div className="phone">
       <div className="phone__photospace">
         <img
@@ -26,7 +27,10 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
         />
       </div>
 
-      <div className="phone__name">{name}</div>
+      <Link to={`/products/${id}`}>
+        <div className="phone__name">{name}</div>
+      </Link>
+
       <div className="phone__price">{`$${price}`}{priceLowered && <span className="phone__price--before">{`$${fullPrice}`}</span>}</div>
       <div className="phone__details">
         <div className="phone__details-line">

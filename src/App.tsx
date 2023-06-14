@@ -6,6 +6,9 @@ import { HomePage } from "./Pages/HomePage/HomePage";
 import { Footer } from "./Components/Footer/Footer";
 import { CartPage } from "./Pages/CartPage/CartPage";
 
+// Temporary
+import { ProductPage } from "./Pages/ProductPage/ProductPage";
+
 export const App = () => (
   <div className="app">
     <Header />
@@ -15,6 +18,7 @@ export const App = () => (
         <Route path="/home" element={<HomePage />} />
         <Route path="/phones" element={<PhonesPage/>} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/products/:id" element={<ProductPage />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </main>
