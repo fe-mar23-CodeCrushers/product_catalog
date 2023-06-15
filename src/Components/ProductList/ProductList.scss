@@ -1,4 +1,5 @@
 @import "../../Helpers/mixins";
+
 .products {
     display: flex;
     flex-direction: column;
@@ -8,6 +9,11 @@
     @include for-tablet() {
         flex-wrap: wrap;
         flex-direction: row;
+    }
+
+    @include for-desktop() {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
     
