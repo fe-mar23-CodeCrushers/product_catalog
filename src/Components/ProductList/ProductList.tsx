@@ -1,18 +1,13 @@
 import './ProductList.scss';
-import { getPhones } from '../../api/phones';
 import { Phone } from '../../types/phone';
 import { PhoneCard } from '../PhoneCard';
-import { useEffect, useState } from 'react';
 
+interface ProductListProps {
+  phones: Phone[];
+}
 
-export const ProductList: React.FC = () => {
-  const [phones, setPhones] = useState<Phone[]>([]);
-
-  useEffect(() => {
-    getPhones()
-      .then(setPhones);
-  }, []);
-
+export const ProductList: React.FC<ProductListProps> = ({ phones }) => {
+  
   return (
     <section className="products">
         {phones.map(phone => (

@@ -1,0 +1,21 @@
+@import "../../Helpers/variables";
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+
+    &__selector {
+        box-sizing: border-box;
+        width: 176px;
+        height: 40px;
+        border: 1px solid #B4BDC3;
+        font-family: Mont, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $color-grey;
+    }
+}
