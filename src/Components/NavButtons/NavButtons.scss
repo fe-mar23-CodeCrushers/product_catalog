@@ -49,8 +49,32 @@
     }
   }
 
+  &__cart {
+    position: relative;
+    width: 15px;
+    height: 15px;
+  }
+
+  &__value {
+    position: absolute;
+    top: -8px;
+    left: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #EB5757;
+    border-radius: 50%;
+    color: white;
+    font-size: 9px;
+    width: 14px;
+    height: 14px;
+  }
+
   &__icon {
     width: 15px;
     height: 15px;
   }
+  
 }

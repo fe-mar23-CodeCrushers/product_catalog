@@ -5,12 +5,19 @@
   display: grid;
   gap: 30px;
 
+  align-self: flex-start;
+
   &__back {
     color: $color-light-grey;
     background: transparent;
     border: none;
     display: flex;
     align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-grey;
+    }
   }
 
   &__header {
@@ -20,7 +27,17 @@
 
   &__list {
     display: grid;
+    align-self: flex-start;
     gap: 15px;
+  }
+
+  &__empty {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    align-self: flex-start;
+    color: white;
+    background: $color-grey;
   }
 }
 
