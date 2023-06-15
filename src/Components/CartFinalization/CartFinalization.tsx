@@ -12,7 +12,9 @@ export const CartFinalization: React.FC<Props> = ({ totalCost }) => {
   const [notification, setNotification] = useState<'success' | 'fail'>('fail');
   const [notificationMessage, setNotificationMessage] = useState('');
 
-  const { setCart } = useContext(cartContext);
+  const { setCart, cart } = useContext(cartContext);
+
+  const sumOfItems = cart.reduce((sum, n) => sum + n.quantity, 0)
 
   const navigate = useNavigate();
   
@@ -28,11 +30,6 @@ export const CartFinalization: React.FC<Props> = ({ totalCost }) => {
     }, 3000)
   }
   
-
-      // setTimeout(() => {
-      //   navigate('/')
-      // }, 3000)
-
   const handleCheckout = () => {
     if (totalCost > 0) {
       setNotification('success');
@@ -49,7 +46,7 @@ export const CartFinalization: React.FC<Props> = ({ totalCost }) => {
         <h2 className='cart-finalization__value'>
           ${totalCost}
         </h2>
-        <span className='cart-finalization__total'>Total for 3 items</span>
+        <span className='cart-finalization__total'>Total for {sumOfItems} items</span>
         <button className='cart-finalization__btn' onClick={handleCheckout}>
           Checkout
         </button>
