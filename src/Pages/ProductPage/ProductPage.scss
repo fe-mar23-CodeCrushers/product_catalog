@@ -1,18 +1,18 @@
 @import "../../Helpers/variables";
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// *,
+// *::before,
+// *::after {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
 
-.main {
+.product-page__container {
   max-width: 1136px;
   margin: 0 auto;
   background: #FFFFFF;
-  padding: 16px 16px 56px;
+  padding: 41px 16px 56px;
 }
 
 .heading__primary {
@@ -20,6 +20,7 @@
   font-size: 22px;
   line-height: 140%;
   color: #313237;
+  margin-top: 16px;
 }
 
 .heading__secondary {
@@ -307,8 +308,8 @@ span.colors__btn-1 {
 }
 
 @media screen and (min-width: 640px) {
-  .main {
-    padding: 16px 24px 64px;
+  .product-page__container {
+    padding: 41px 24px 64px;
   }
 
   .heading__primary {

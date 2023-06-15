@@ -1,8 +1,9 @@
-import { PageLink } from '../PageLink/PageLink';
-import './PhoneCard.scss';
-import { Phone } from '../../types/phone';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import './PhoneCard.scss';
+import { Phone } from '../../types/phone';
+import { ToggleFav } from '../Favourites/Favourites';
 
 interface PhoneCardProps {
   phone: Phone,
@@ -10,12 +11,8 @@ interface PhoneCardProps {
 
 export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
   const [active, setActive] = useState(false);
-  const { phoneId, name, fullPrice, price, screen, capacity, ram, image } = phone;
+  const { id, phoneId, name, fullPrice, price, screen, capacity, ram, image } = phone;
   const priceLowered = fullPrice !== price;
-
-  const handleFavouritesClick = () => {
-    setActive(!active);
-  }
 
   return (
     <div className="phone">
@@ -52,14 +49,14 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
           <a
             href="#addtocart"
             className="phone__buttons-cart"
-            onClick={() => { }}
+            onClick={() => {  }}
           >Add to cart
           </a>
 
           <a
             href="#addtofavourites"
             className="phone__buttons-favwrapper"
-            onClick={handleFavouritesClick}>
+            onClick={() => ToggleFav(id)}>
             <img alt="add to favourites icon" className="phone__favourites-icon" src={require('../../assets/favourite.png')}></img>
           </a>
         </div>
