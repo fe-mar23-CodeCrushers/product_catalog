@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { CartElement } from '../../Components/CartElement/CartElement';
 import { CartFinalization } from '../../Components/CartFinalization/CartFinalization';
 import './CartPage.scss';
 import { useNavigate } from "react-router-dom";
+import { cartContext } from '../../App';
 
 export const CartPage = () => {
   const navigate = useNavigate();
 
   const [totalCost, setTotalCost] = useState(0);
+
+  const { cart } = useContext(cartContext)
 
   return (
     <section className='cart'>
@@ -19,11 +22,15 @@ export const CartPage = () => {
       </button>
       <h1 className='cart__header'>Cart</h1>
 
-      <ul className='cart__list'>
-        <CartElement setTotalCost={setTotalCost} />
-        <CartElement setTotalCost={setTotalCost} />
-        <CartElement setTotalCost={setTotalCost} />
-      </ul>
+      {cart.length > 0 ? (
+        <ul className='cart__list'>
+          {cart.map(element => (
+            <CartElement cart={element} setTotalCost={setTotalCost} />
+          ))}
+        </ul>
+      ) : (
+        <h3 className='cart__empty'>Cart is empty</h3>
+      )}
   
       <CartFinalization totalCost={totalCost} />
     </section>
