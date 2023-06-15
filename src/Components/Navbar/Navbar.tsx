@@ -14,7 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
   return (
     <div className={`navbar ${isOpen ? 'navbar--open' : ''}`}>
       <ul className="navbar__list">
-        <li className={`navbar__element ${location.pathname === '/home' ? 'navbar__element--active' : ''}`}>
+        <li className={`navbar__element ${location.pathname === '/home' || location.pathname === '/' ? 'navbar__element--active' : ''}`}>
           <PageLink to="/home" classNames="navbar__link" innerValue="Home" />
         </li>
 
