@@ -7,19 +7,6 @@
 
   align-self: flex-start;
 
-  &__back {
-    color: $color-light-grey;
-    background: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-
-    &:hover {
-      color: $color-grey;
-    }
-  }
-
   &__header {
     font-size: 32px;
     font-weight: 800;
@@ -44,6 +31,7 @@
 @media (min-width: 640px) {
   .cart {
     gap: 16px;
+
     &__header {
       font-size: 48px;
     }
