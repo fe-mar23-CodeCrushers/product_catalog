@@ -9,4 +9,5 @@ export type Phone = {
     ram: string,
     year: number,
     image: string,
+    phoneId: string
 }

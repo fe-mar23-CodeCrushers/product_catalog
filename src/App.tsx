@@ -7,6 +7,7 @@ import { Footer } from "./Components/Footer/Footer";
 import { CartPage } from "./Pages/CartPage/CartPage";
 import { createContext, useEffect, useState } from 'react';
 import { Cart } from "./types/Cart";
+import { ProductPage } from "./Pages/ProductPage/ProductPage";
 
 export const cartContext = createContext<{ cart: Cart[]; setCart: React.Dispatch<React.SetStateAction<Cart[]>> }>({
   cart: [],
@@ -32,6 +33,7 @@ export const App = () => {
             <Route path="/home" element={<HomePage />} />
             <Route path="/phones" element={<PhonesPage/>} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/products/:id" element={<ProductPage />} />
             <Route path="*" element={<h1>Not Found</h1>} />
           </Routes>
         </main>

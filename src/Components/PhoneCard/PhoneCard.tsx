@@ -1,7 +1,9 @@
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import './PhoneCard.scss';
 import { Phone } from '../../types/phone';
 import { ToggleFav } from '../Favourites/Favourites';
-import { useContext, useState } from 'react';
 import { cartContext } from '../../App';
 
 interface PhoneCardProps {
@@ -9,7 +11,8 @@ interface PhoneCardProps {
 }
 
 export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
-  const { id, name, fullPrice, price, screen, capacity, ram, image } = phone;
+  const [active, setActive] = useState(false);
+  const { id, phoneId, name, fullPrice, price, screen, capacity, ram, image } = phone;
   const priceLowered = fullPrice !== price;
 
   const { setCart, cart } = useContext(cartContext);
@@ -34,7 +37,6 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
   };
 
   return (
-
     <div className="phone">
       <div className="phone__photospace">
         <img
@@ -44,7 +46,10 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
         />
       </div>
 
-      <div className="phone__name">{name}</div>
+      <Link to={`/products/${phoneId}`}>
+        <div className="phone__name">{name}</div>
+      </Link>
+
       <div className="phone__price">{`$${price}`}{priceLowered && <span className="phone__price--before">{`$${fullPrice}`}</span>}</div>
       <div className="phone__details">
         <div className="phone__details-line">
