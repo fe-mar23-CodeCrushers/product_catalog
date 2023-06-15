@@ -1,19 +1,14 @@
 import './PhoneCard.scss';
 import { Phone } from '../../types/phone';
-import { useState } from 'react';
+import { ToggleFav } from '../Favourites/Favourites';
 
 interface PhoneCardProps {
   phone: Phone,
 }
 
 export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
-  const [active, setActive] = useState(false);
-  const { name, fullPrice, price, screen, capacity, ram, image } = phone;
+  const { id, name, fullPrice, price, screen, capacity, ram, image } = phone;
   const priceLowered = fullPrice !== price;
-
-  const handleFavouritesClick = () => {
-    setActive(!active);
-  }
 
   return (
 
@@ -48,14 +43,14 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
           <a
             href="#addtocart"
             className="phone__buttons-cart"
-            onClick={() => { }}
+            onClick={() => {  }}
           >Add to cart
           </a>
 
           <a
             href="#addtofavourites"
             className="phone__buttons-favwrapper"
-            onClick={handleFavouritesClick}>
+            onClick={() => ToggleFav(id)}>
             <img alt="add to favourites icon" className="phone__favourites-icon" src={require('../../assets/favourite.png')}></img>
           </a>
         </div>
