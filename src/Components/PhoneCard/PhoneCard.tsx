@@ -1,6 +1,8 @@
 import './PhoneCard.scss';
 import { Phone } from '../../types/phone';
 import { ToggleFav } from '../Favourites/Favourites';
+import { useContext, useState } from 'react';
+import { cartContext } from '../../App';
 
 interface PhoneCardProps {
   phone: Phone,
@@ -9,6 +11,27 @@ interface PhoneCardProps {
 export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
   const { id, name, fullPrice, price, screen, capacity, ram, image } = phone;
   const priceLowered = fullPrice !== price;
+
+  const { setCart, cart } = useContext(cartContext);
+
+  const addToCart = () => {
+    setCart(prevCart => [
+      ...prevCart,
+      {
+        id,
+        image,
+        price,
+        name,
+        quantity: 1,
+      }
+    ]);
+  };
+
+  const isAdded = cart.find(item => item.id === id);
+
+  const removeFromCart = () => {
+    setCart(prevCart => prevCart.filter(cart => cart.id !== id));
+  };
 
   return (
 
@@ -40,12 +63,22 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
         </div>
 
         <div className="phone__buttons">
-          <a
-            href="#addtocart"
-            className="phone__buttons-cart"
-            onClick={() => {  }}
-          >Add to cart
-          </a>
+          {!isAdded ? (
+            <button
+              className="phone__buttons-cart"
+              onClick={addToCart}
+            >
+              Add to cart
+            </button>
+          ) : (
+            <button
+              className="phone__buttons-cart phone__buttons-cart--added"
+              onClick={removeFromCart}
+            >
+              Added
+            </button>
+          )}
+          
 
           <a
             href="#addtofavourites"

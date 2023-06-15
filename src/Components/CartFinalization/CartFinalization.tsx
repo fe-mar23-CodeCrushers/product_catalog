@@ -1,27 +1,42 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { NotificationModal } from '../NotificationModal/NotificationModal';
 import './CartFinalization.scss';
 import { useNavigate } from 'react-router-dom';
+import { cartContext } from '../../App';
 
 interface Props {
   totalCost: number;
 }
 
 export const CartFinalization: React.FC<Props> = ({ totalCost }) => {
-  const [notification, setNotification] = useState<'success' | 'fail'>();
+  const [notification, setNotification] = useState<'success' | 'fail'>('fail');
   const [notificationMessage, setNotificationMessage] = useState('');
 
-  const navigate = useNavigate();
+  const { setCart } = useContext(cartContext);
 
+  const navigate = useNavigate();
+  
+  const handleCloseModal = () => {
+    setNotificationMessage('');
+  }
+
+  const handleConfirmCheckout = () => {
+    setNotificationMessage('Thank your for your money! :) Redirecting to Home Page in 3 sek')
+    setCart([]);
+     setTimeout(() => {
+      navigate('/')
+    }, 3000)
+  }
+  
+
+      // setTimeout(() => {
+      //   navigate('/')
+      // }, 3000)
 
   const handleCheckout = () => {
     if (totalCost > 0) {
       setNotification('success');
-      setNotificationMessage(`Finalizing your cart... You need to pay ${totalCost}$, Redirecting to home Page in 3s`)
-
-      setTimeout(() => {
-        navigate('/')
-      }, 3000)
+      setNotificationMessage(`You need to pay ${totalCost}$, Do you want to continue?`)
     } else {
       setNotification('fail')
       setNotificationMessage('Your cart is empty')
@@ -40,7 +55,12 @@ export const CartFinalization: React.FC<Props> = ({ totalCost }) => {
         </button>
       </div>
 
-      {notification && (<NotificationModal text={notificationMessage} type={notification} />)}
+      {notificationMessage.length > 0 && (<NotificationModal
+        text={notificationMessage} 
+        type={notification} 
+        handleCloseModal={handleCloseModal}
+        handleConfirmCheckout={handleConfirmCheckout}
+      />)}
   
       
     </>
