@@ -1,6 +1,6 @@
 @import "../../Helpers/mixins";
 
-main {
+.main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,6 +15,11 @@ main {
     @include for-tablet() {
         flex-wrap: wrap;
         flex-direction: row;
+    }
+
+    @include for-desktop() {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
     

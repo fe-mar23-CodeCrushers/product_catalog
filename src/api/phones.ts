@@ -15,3 +15,8 @@ export const getPhonesExtended = (): Promise<PhoneExtended[]> => {
   return fetch(API_URL_EXT).then(response =>
     response.json())
 };
+
+export const getPhoneDetails = (id: string) => {
+  return fetch(`${API_URL_EXT}/${id}.json`)
+    .then(response => response.json())
+};

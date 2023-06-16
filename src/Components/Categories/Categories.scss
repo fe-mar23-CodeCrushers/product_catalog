@@ -1,0 +1,57 @@
+@import "../../Helpers/variables";
+
+.categories {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 30px;
+
+  &__title {
+    font-size: 22px;
+    font-weight: 800;
+    color: $color-grey;
+  }
+
+  &__list {
+    display: grid;
+    gap: 20px;
+  }
+
+  &__element {
+    display: grid;
+    &-image {
+      width: 100%;
+    }
+
+    &-title {
+      margin-top: 20px;
+      color: $color-grey;
+      font-size: 20px;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-count {
+      font-size: 14px;
+      font-weight: 400;
+      color: #89939a;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .categories {
+    &__title {
+      font-size: 32px;
+    }
+
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

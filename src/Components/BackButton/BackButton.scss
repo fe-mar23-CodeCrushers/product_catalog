@@ -1,0 +1,16 @@
+@import "../../Helpers/variables";
+
+.cart {
+  &__back {
+    color: $color-light-grey;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-grey;
+    }
+  }
+}

@@ -5,7 +5,7 @@ import { PageLink } from '../PageLink/PageLink';
 
 export const Header = () => {
   return (
-    <header className="header">
+    <header className="header" id="top">
       <div className="header__container">
         <PageLink 
           to='/home' 

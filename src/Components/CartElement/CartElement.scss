@@ -5,7 +5,7 @@
   border: 1px solid $color-grey-elements;
 
   display: grid;
-  grid-template-columns: auto auto 1fr auto;
+  grid-template-columns: auto auto 1fr 1fr;
   grid-template-areas: 
   "delete image title title"
   "count count value value";
@@ -19,10 +19,24 @@
 
     border: none;
     background: transparent;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    grid-area: image;
+    width: 66px;
+    height: 66px;
   }
 
   &__image {
-    grid-area: image;
+    object-fit: contain;
+    height: 100%;
   }
 
   &__title {
@@ -51,7 +65,7 @@
   &__btn {
     height: 32px;
     width: 32px;
-
+    cursor: pointer;
     border: 1px solid $color-grey-elements;
     background:none;
 
@@ -75,7 +89,7 @@
 
 @media (min-width: 640px) {
   .cart-element {
-    grid-template-columns: auto auto 1fr auto auto;
+    grid-template-columns: auto auto 5fr 1fr 1fr;
     grid-template-areas: "delete image title count value";
     gap: 30px;
   }

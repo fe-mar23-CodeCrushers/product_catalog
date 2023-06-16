@@ -19,7 +19,10 @@ export const Footer = () => (
 
       <div className='footer__return'>
         <span>Back to top</span>
-        <a href='#top'>
+        <a href='#top' onClick={(event) => {
+          event.preventDefault();
+          window.scrollTo(0, 0);
+        }}>
           <div className='footer__return__box'>
             <img className='footer__return__img' src="https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/Footer/public/img/footerButtonImg.png" alt="dssds"></img>
           </div>
