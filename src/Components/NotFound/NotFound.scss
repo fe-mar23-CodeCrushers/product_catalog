@@ -1,0 +1,72 @@
+@import "../../Helpers/variables";
+
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        height: 100px;
+        background-color: $color-grey;
+    }
+
+    &__middle {
+        padding-top:80px;
+        padding-bottom: 80px;
+    }
+
+    &__footer {
+        height: 100px;
+        background-color: $color-grey;
+    }
+}
+
+.middle {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__title {
+        text-align: center;
+    }
+
+    &__error {
+        text-align: center;
+    }
+
+    &__image {
+        text-align: center;
+        height: 120px;
+        width: 120px;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $color-grey-elements;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__text {
+        text-align: center;
+    }
+}
+
+@media (max-width:639px) {
+    .footer__title {
+        font-size: 18px;
+    }
+
+    .footer__text {
+        font-size: 16px;
+    }
+}

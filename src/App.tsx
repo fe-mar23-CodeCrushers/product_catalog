@@ -5,6 +5,7 @@ import { PhonesPage } from "./Pages/PhonesPage/PhonesPage";
 import { HomePage } from "./Pages/HomePage/HomePage";
 import { Footer } from "./Components/Footer/Footer";
 import { CartPage } from "./Pages/CartPage/CartPage";
+import { NotFound } from "./Components/NotFound/NotFound";
 import { createContext, useEffect, useState } from 'react';
 import { Cart } from "./types/Cart";
 import { ProductPage } from "./Pages/ProductPage/ProductPage";
@@ -34,7 +35,7 @@ export const App = () => {
             <Route path="/phones" element={<PhonesPage/>} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/products/:id" element={<ProductPage />} />
-            <Route path="*" element={<h1>Not Found</h1>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
@@ -42,4 +43,3 @@ export const App = () => {
     </cartContext.Provider>
   )
 }
-
