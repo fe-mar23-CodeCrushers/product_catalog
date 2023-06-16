@@ -63,6 +63,10 @@ $text-color:#89939A;
       border: 1px solid #B4BDC4;
       width: 32px;
       height: 32px;
+
+      &:hover{
+        border-color: #313131;
+      }
     }
 
     &__img {
