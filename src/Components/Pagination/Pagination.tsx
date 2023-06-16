@@ -1,27 +1,36 @@
+import React from 'react';
 import './Pagination.scss';
 import classNames from 'classnames';
+import { getNumbers } from '../../Helpers/getnumbers';
 
 interface PaginationProps {
-    totalCount: number;
-    currentPage: number;
-    pageElements: number[];
-    isLastPage: boolean;
-    firstElement: number;
-    lastElement: number;
-    handlePageSizeChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-    handleSelectedPageChange: (selectedPage: number) => void;
-}
+    onPageChange: (page: number) => void,
+    pageSize: number,
+    setPageSize: (numberOfPages: number) => void,
+    totalCount: number,
+    currentPage: number,
+    totalPages: number,
+    isLastPage: boolean,
+};
 
 export const Pagination: React.FC<PaginationProps> = ({
-    totalCount, pageElements, currentPage, isLastPage, firstElement, lastElement, handlePageSizeChange, handleSelectedPageChange
+    totalPages,
+    onPageChange,
+    currentPage,
+    totalCount,
+    pageSize,
+    setPageSize,
+    isLastPage,
 }) => {
-    const onNext = () => {
-        handleSelectedPageChange(currentPage + 1);
-    };
+    const range = getNumbers(1, totalPages);
 
     const onPrevious = () => {
-        handleSelectedPageChange(currentPage - 1);
+        onPageChange(currentPage - 1);
     };
+
+    const onNext = () => {
+        onPageChange(currentPage + 1);
+    }
 
     return (
         <div className="pagination">
@@ -29,16 +38,17 @@ export const Pagination: React.FC<PaginationProps> = ({
             <select 
                 className="pagination__selector"
                 defaultValue={`Items per page`}
-                onChange={handlePageSizeChange}
+                onChange={(event) => setPageSize(Number(event?.target.value))}
             >
-                <option value="4">Items per page</option>
+                <option value="Items per page" disabled>Items per page</option>
                 <option value="4">4</option>
                 <option value="8">8</option>
                 <option value="16">16</option>
-                <option value="all">all</option>
+                <option value={totalCount}>all</option>
             </select>
 
-            <ul className="pagination__container" >
+            {pageSize !== totalCount && (
+                <ul className="pagination__container" >
 
                 <li
                     className={classNames('pagination__item', {
@@ -46,16 +56,17 @@ export const Pagination: React.FC<PaginationProps> = ({
                     })}
                     onClick={onPrevious}
                 >
-                    <div className="arrow__left" />
+                    <div className="arrow__left"><img src={require(`../../assets/arrow-left.png`)} alt="arrow left"></img></div>
                 </li>
 
-                {pageElements.map(pageNumber => {
+                {range.map(pageNumber => {
                     return (
                     <li
                         className={classNames('pagination__item', {
                         selected: pageNumber === currentPage
                         })}
-                        onClick={() => handleSelectedPageChange(pageNumber)}
+                            onClick={() => onPageChange(pageNumber)}
+                            key={pageNumber}
                     >
                     {pageNumber}
                     </li>
@@ -64,13 +75,14 @@ export const Pagination: React.FC<PaginationProps> = ({
 
                 <li
                     className={classNames('pagination__item', {
-                    disabled: isLastPage
+                        disabled: isLastPage
                     })}
                     onClick={onNext}
                 >
-                    <div className="arrow__right" />
+                    <div className="arrow__right"><img src={require(`../../assets/arrow-right.png`)} alt="arrow right"></img></div>
                 </li>
             </ul>
+            )}
         </div>
     )
 };
