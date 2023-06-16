@@ -40,6 +40,11 @@
     &--image {
       width: auto;
       object-fit: contain;
+      transition: transform 0.4s ease-in-out 0.02s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 
