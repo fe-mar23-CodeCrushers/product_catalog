@@ -19,7 +19,7 @@ export const CartPage = () => {
       {cart.length > 0 ? (
         <ul className='cart__list'>
           {cart.map(element => (
-            <CartElement cart={element} setTotalCost={setTotalCost} />
+            <CartElement cart={element} setTotalCost={setTotalCost} key={element.id}/>
           ))}
         </ul>
       ) : (

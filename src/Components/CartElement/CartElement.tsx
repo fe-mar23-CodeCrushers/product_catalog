@@ -10,10 +10,10 @@ interface Props {
 
 export const CartElement: React.FC<Props> = ({ setTotalCost, cart }) => {
   const { id, image, name, price, quantity } = cart;
-
   const { setCart } = useContext(cartContext);
-
   const [count, setCount] = useState(quantity);
+
+  console.log(count)
 
   useEffect(() => {
     setTotalCost(prevState => prevState + price * count);
