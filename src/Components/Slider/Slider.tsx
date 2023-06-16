@@ -9,13 +9,13 @@ const slides = [
   },
   {
     id: 1,
-    url: 'https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/HomePage/public/img/Banner.png',
-    urlMobile: 'https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/HomePage/public/img/image%2016.png',
+    url: 'https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/main/public/img/Banner-green.png',
+    urlMobile: 'https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/main/public/img/image%2016-green.png',
   },
   {
     id: 2,
-    url: 'https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/HomePage/public/img/Banner.png',
-    urlMobile: 'https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/HomePage/public/img/image%2016.png',
+    url: 'https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/main/public/img/Banner-red.png',
+    urlMobile: 'https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/main/public/img/image%2016-red.png',
   },
 ]
 
@@ -37,7 +37,6 @@ export const Slider = () => {
 
   useEffect(() => { 
     const interval = setInterval(() => {
-      console.log(slide)
       handleNextSlide();
     }, 5000);
 

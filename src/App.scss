@@ -24,11 +24,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Mont", sans-serif;
 }
 
 main {
   min-height: 80vh;
+}
+
+a {
+  text-decoration: none;
 }

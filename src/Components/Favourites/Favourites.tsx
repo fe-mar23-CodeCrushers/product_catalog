@@ -4,7 +4,6 @@ import { PhoneCard } from "../PhoneCard";
 import { Phone } from "../../types/phone";
 import { getPhones } from "../../api/phones";
 import "./Favourites.scss"
-
 //In card we need to add onclick function on fav button that execute ToogleFav function with id of desired phone to add/delete
 //Also in header in fav button we need to add that onclick its redirect to <Favourites /> 
 
