@@ -1,0 +1,49 @@
+@import "../../Helpers/variables";
+
+.slider-list {
+  margin-top: 50px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 0 20px;
+
+  &__title {
+    color: $color-grey;
+    font-size: 22px;
+  }
+  
+  &__elements {
+    grid-column: 1 / 3;
+    transition: transform 0.3s;
+    display: flex;
+    gap: 24px;
+  }
+
+  &__controls {
+    justify-self: flex-end;
+    align-self: center;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__btn {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid #B4BDC4;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-grey;
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  .slider-list {
+    &__title {
+      font-size: 32px;
+    }
+  }
+}
