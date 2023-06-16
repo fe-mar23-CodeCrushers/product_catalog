@@ -1,3 +1,5 @@
+@import "../../Helpers/variables";
+
 .container {
     margin: 0;
     padding: 0;
@@ -8,7 +10,7 @@
 
     &__header {
         height: 100px;
-        background-color: darkslategray;
+        background-color: $color-grey;
     }
 
     &__middle {
@@ -18,7 +20,7 @@
 
     &__footer {
         height: 100px;
-        background-color: darkslategray;
+        background-color: $color-grey;
     }
 }
 
@@ -48,6 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: $color-grey-elements;
 
     &__title {
         text-align: center;
