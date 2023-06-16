@@ -88,7 +88,7 @@ export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
           <a
             href="#addtofavourites"
             className="phone__buttons-favwrapper"
-            onClick={() => ToggleFav(id)}>
+            onClick={() => {ToggleFav(id)}}>
             <img alt="add to favourites icon" className="phone__favourites-icon" src={require('../../assets/favourite.png')}></img>
           </a>
         </div>

@@ -1,5 +1,11 @@
 @import "../../Helpers/mixins";
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .products {
     display: flex;
     flex-direction: column;

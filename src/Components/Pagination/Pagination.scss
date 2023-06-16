@@ -1,0 +1,89 @@
+@import "../../Helpers/variables";
+@import "../../Helpers/mixins";
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 64px;
+
+    @include for-desktop() {
+        margin-bottom: 80px;
+    }
+
+    &__selector {
+        box-sizing: border-box;
+        width: 176px;
+        height: 40px;
+        margin-right: 32px;
+        border: 1px solid $color-light-grey-2;
+        font-family: Mont, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: $color-grey;
+
+        &:hover {
+            border: 1px solid $color-grey
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $color-light-grey-2;
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+        background-color: #FFFFFF;
+        color: $color-grey;
+
+        &:hover {
+            border: 1px solid $color-grey;
+            background-color: #FFFFFF;
+            color: $color-grey;
+        }
+    }
+
+    &__item:first-child {
+        margin-right: 16px;
+    }
+
+    &__item:last-child {
+        margin-left: 8px;
+        margin-right: 0;
+    }
+}
+
+.arrow-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $color-light-grey-2;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.selected {
+    background-color: $color-grey;
+    color: #FFFFFF;
+
+    &:hover {
+        background-color: $color-grey;
+        color: #FFFFFF;
+    }
+}
