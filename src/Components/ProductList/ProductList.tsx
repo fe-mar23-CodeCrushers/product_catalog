@@ -21,6 +21,11 @@ export const ProductList = () => {
 
   const totalPages = Math.ceil(phones.length / pageSize);
 
+  const handleSelectChange = (value: number) => {
+    setPageSize(value);
+    setCurrentPage(1);
+  }
+
   const currentPhones = useMemo(() => {
     if (pageSize === phones.length) {
       return phones;
@@ -51,6 +56,7 @@ export const ProductList = () => {
         pageSize={pageSize}
         setPageSize={setPageSize}
         onPageChange={setCurrentPage}
+        handleSelectChange={handleSelectChange}
         isLastPage={isLastPage}
       />
       </div>

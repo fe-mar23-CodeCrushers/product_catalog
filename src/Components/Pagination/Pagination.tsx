@@ -11,6 +11,7 @@ interface PaginationProps {
     currentPage: number,
     totalPages: number,
     isLastPage: boolean,
+    handleSelectChange: (value: number) => void,
 };
 
 export const Pagination: React.FC<PaginationProps> = ({
@@ -21,6 +22,7 @@ export const Pagination: React.FC<PaginationProps> = ({
     pageSize,
     setPageSize,
     isLastPage,
+    handleSelectChange,
 }) => {
     const range = getNumbers(1, totalPages);
 
@@ -71,7 +73,7 @@ export const Pagination: React.FC<PaginationProps> = ({
             <select 
                 className="pagination__selector"
                 defaultValue={`Items per page`}
-                onChange={(event) => setPageSize(Number(event?.target.value))}
+                onChange={(event) => handleSelectChange(Number(event.target.value))}
             >
                 <option value="Items per page" disabled>Items per page</option>
                 <option value="4">4</option>
