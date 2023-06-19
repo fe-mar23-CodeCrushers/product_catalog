@@ -2,7 +2,7 @@
 
 - [DEMO LINK](https://fe-mar23-CodeCrushers.github.io/product_catalog)
 
-- Contributors:
+Contributors:
 
 - [Daniel Sorokowski](https://github.com/DanielSorokowski)
 - [Sylwia Prusak](https://github.com/sylcym)
