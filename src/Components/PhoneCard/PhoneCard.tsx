@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import './PhoneCard.scss';
@@ -12,6 +12,7 @@ interface PhoneCardProps {
 
 export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
   const { id, phoneId, name, fullPrice, price, screen, capacity, ram, image, color, year } = phone;
+
   const priceLowered = fullPrice !== price;
 
   const { setCart, cart, setFav, fav } = useContext(cartContext);

@@ -12,25 +12,6 @@
         margin-bottom: 80px;
     }
 
-    &__selector {
-        box-sizing: border-box;
-        width: 176px;
-        height: 40px;
-        margin-right: 32px;
-        border: 1px solid $color-light-grey-2;
-        font-family: Mont, Arial, sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 21px;
-        letter-spacing: 0em;
-        text-align: center;
-        color: $color-grey;
-
-        &:hover {
-            border: 1px solid $color-grey
-        }
-    }
-
     &__container {
         display: flex;
         flex-direction: row;
