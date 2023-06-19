@@ -22,13 +22,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
           <PageLink to="/phones" classNames="navbar__link" innerValue="Phones" />
         </li>
 
-        <li className={`navbar__element ${location.pathname === '/tablets' ? 'navbar__element--active' : ''}`}>
+        {/* <li className={`navbar__element ${location.pathname === '/tablets' ? 'navbar__element--active' : ''}`}>
           <PageLink to="/tablets" classNames="navbar__link" innerValue="Tablets" />
         </li>
 
         <li className={`navbar__element ${location.pathname === '/accessories' ? 'navbar__element--active' : ''}`}>
           <PageLink to="/accessories" classNames="navbar__link" innerValue="Accessories" />
-        </li>
+        </li> */}
       </ul>
 
       <NavButtons />
