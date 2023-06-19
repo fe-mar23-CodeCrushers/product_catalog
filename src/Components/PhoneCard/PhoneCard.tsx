@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import './PhoneCard.scss';
@@ -11,7 +11,6 @@ interface PhoneCardProps {
 }
 
 export const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
-  const [active, setActive] = useState(false);
   const { id, phoneId, name, fullPrice, price, screen, capacity, ram, image } = phone;
   const priceLowered = fullPrice !== price;
 
