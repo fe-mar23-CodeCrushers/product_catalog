@@ -17,11 +17,11 @@ export const CartPage = () => {
       <h1 className='cart__header'>Cart</h1>
 
       {cart.length > 0 ? (
-        <ul className='cart__list'>
+        <div className='cart__list'>
           {cart.map(element => (
             <CartElement cart={element} setTotalCost={setTotalCost} key={element.id}/>
           ))}
-        </ul>
+        </div>
       ) : (
         <h3 className='cart__empty'>Cart is empty</h3>
       )}
