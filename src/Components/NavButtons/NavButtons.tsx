@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export const NavButtons = () => {
-  const { cart } = useContext(cartContext)
+  const { cart, fav } = useContext(cartContext)
   const location = useLocation();
   const sumOfItems = cart.reduce((sum, n) => sum + n.quantity, 0)
 
@@ -15,11 +15,15 @@ export const NavButtons = () => {
         to="favorites"
         classNames={`nav-buttons__element ${location.pathname === '/favorites' ? 'nav-buttons__element--active' : ''}`}
         innerValue={
-          <img
-            src="https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/header/public/img/Icons/Favourites%20(Heart%20Like).png"
-            alt="favorites icon"
-            className="nav-buttons__icon"
-          />
+          <div className="nav-buttons__cart">
+            <img
+              src="https://raw.githubusercontent.com/fe-mar23-CodeCrushers/product_catalog/header/public/img/Icons/Favourites%20(Heart%20Like).png"
+              alt="favorites icon"
+              className="nav-buttons__icon"
+            />
+            {fav.length > 0 && <span className="nav-buttons__value">{fav.length}</span>}
+          </div>
+          
         }
       />
       <PageLink
